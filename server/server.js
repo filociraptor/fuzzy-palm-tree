@@ -12,8 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize Supabase Client
-const supabaseUrl = 'https://fjuvicrosdasgatkrywn.supabase.co' // Replace with your Supabase API URL
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqdXZpY3Jvc2Rhc2dhdGtyeXduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU2Mzc5ODAsImV4cCI6MjA2MTIxMzk4MH0.eB7xMDnXGapdNsB4omZJTFHblZ3KyfjkRdrSn7Mt4Gk'; // Replace with your anon key
+const supabaseUrl = process.env.SUPABASE_URL // Replace with your Supabase API URL
+const supabaseKey = process.env.SUPABASE_KEY // Replace with your anon key
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Routes (for adding and fetching glaze combinations)
